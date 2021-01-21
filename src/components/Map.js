@@ -45,10 +45,12 @@ const Map = (props) => {
     const [errorMessage, setErrorMessage] = useState('')
     const [route, setRoute] = useState(false)
     const [crimeData, setData] = useState([])
-    const [showHeatMap, setShow] = useState(false)
+
     const [createdRoute, setCreatedRoute] = useState(false)
     const [directionResponse, setDirectionResponse] = useState('')
     const {
+        showHeatMap,
+        setShow,
         theme,
         startedJourney,
         setWatchId,
@@ -92,30 +94,30 @@ const Map = (props) => {
     }, [])
 
     // set centre and origin with current position
-    const setLocation = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setCentre({
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                    })
-                    setOrigin({
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                    })
-                    setLoading(false)
-                },
-                (error) => {
-                    console.log(error)
-                },
-                { timeout: 60000, enableHighAccuracy: true, maximumAge: 0 }
-            )
-        } else {
-            setError(true)
-            setErrorMessage('Your browser needs access to your location')
-        }
-    }
+    // const setLocation = () => {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(
+    //             (position) => {
+    //                 setCentre({
+    //                     lat: position.coords.latitude,
+    //                     lng: position.coords.longitude,
+    //                 })
+    //                 setOrigin({
+    //                     lat: position.coords.latitude,
+    //                     lng: position.coords.longitude,
+    //                 })
+    //                 setLoading(false)
+    //             },
+    //             (error) => {
+    //                 console.log(error)
+    //             },
+    //             { timeout: 60000, enableHighAccuracy: true, maximumAge: 0 }
+    //         )
+    //     } else {
+    //         setError(true)
+    //         setErrorMessage('Your browser needs access to your location')
+    //     }
+    // }
 
     const watchLocation = () => {
         const options = {

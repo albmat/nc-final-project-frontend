@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 function SignupForm(props) {
-    const [username, setUsername] = useState('')
+    const [username] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

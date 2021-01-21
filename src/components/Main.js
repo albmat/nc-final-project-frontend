@@ -26,7 +26,7 @@ function Main(props) {
     }))
     const API_KEY = process.env.REACT_APP_API_KEY
     const [errorMessage, setErrorMessage] = useState('')
-    const [errorCode, setErrorCode] = useState('')
+    const [, setErrorCode] = useState('')
 
     // local storage data
     const userId = JSON.parse(localStorage.getItem('userId'))
@@ -39,7 +39,6 @@ function Main(props) {
     let storageUserLocation = JSON.parse(localStorage.getItem('centre'))
     let storageSavedDetails = JSON.parse(localStorage.getItem('savedDetails'))
     let storageContacts = JSON.parse(localStorage.getItem('contacts'))
-    let userDetails = JSON.parse(localStorage.getItem('localUser'))
 
     const [savedDetails, setSavedDetails] = useState(false)
     const [startedJourney, setStartedJourney] = useState(false)
@@ -48,6 +47,7 @@ function Main(props) {
     const [endRoute, setEndRoute] = useState(false)
     const [duration, setDuration] = useState('')
     const [distance, setDistance] = useState('')
+    const [showHeatMap, setShow] = useState(false)
 
     // details from journey details component
     const [travelMode, setTravelMode] = useState('walking')
@@ -280,6 +280,8 @@ function Main(props) {
                     distance={distance}
                     setTravelMode={setTravelMode}
                     travelMode={travelMode}
+                    showHeatMap={showHeatMap}
+                    setShow={setShow}
                 />
             </LoadScript>
             {!storageStartedJourney &&
