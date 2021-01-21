@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "safe-home-alba",
     "public": "public",
     "ignore": [
       "firebase.json",

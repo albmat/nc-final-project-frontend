@@ -3,7 +3,6 @@ import axios from 'axios'
 export const getOriginCoord = (origin) => {
     return axios
         .get(
-            // `http://api.positionstack.com/v1/forward?access_key=f057bf6425c9fc6624f68f585db51741&query=${origin}`
             `https://eu1.locationiq.com/v1/search.php?key=pk.6a9d6e8e4c85dd1d973db43062cf8bf8&q=${origin}&format=json`
         )
         .then((response) => {
@@ -24,7 +23,6 @@ export const getAddressFromCoord = (coords) => {
 
     return axios
         .get(
-            // `http://api.positionstack.com/v1/reverse?access_key=f057bf6425c9fc6624f68f585db51741&query=${latStr},${lngStr}`
             `https://eu1.locationiq.com/v1/reverse.php?key=pk.6a9d6e8e4c85dd1d973db43062cf8bf8&lat=${latStr}&lon=${lngStr}&format=json`
         )
         .then((response) => {

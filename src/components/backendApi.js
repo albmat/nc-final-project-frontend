@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const newsApi = Axios.create({
-    baseURL: 'https://safe-home-api.herokuapp.com/api',
+    baseURL: 'https://be-safe-home-alba.herokuapp.com/api',
 })
 
 export const getUsers = async () => {
